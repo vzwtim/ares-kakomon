@@ -1,0 +1,13 @@
+node_modules/
+apps/*/node_modules/
+dist/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Lock files
+**/package-lock.json
+
+# Unwanted files
+あ
