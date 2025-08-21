@@ -1,21 +1,26 @@
+import * as fs from 'fs';
+import * as path from 'path';
+import { parse } from 'csv-parse/sync';
 import { Subject, Unit, Question } from '@ares-kakomon/core';
 
-export const subjects: Subject[] = [{ id: 's1', title: 'ダミー科目' }];
+type RawQuestion = Omit<Question, 'choices' | 'answer'> & {
+  choices?: string;
+  answer: string;
+};
 
-export const units: Unit[] = Array.from({ length: 5 }, (_, i) => ({
-  id: `u${i + 1}`,
-  subjectId: 's1',
-  title: `ダミー単元${i + 1}`,
-}));
+function loadCSV<T>(file: string): T[] {
+  const text = fs.readFileSync(path.resolve(__dirname, file), 'utf8');
+  return parse(text, { columns: true, skip_empty_lines: true }) as T[];
+}
 
-export const questions: Question[] = Array.from({ length: 50 }, (_, i) => ({
-  id: `q${i + 1}`,
-  subjectId: 's1',
-  unitId: `u${Math.floor(i / 10) + 1}`,
-  type: i % 2 === 0 ? 'mc' : 'tf',
-  prompt: `ダミー問題${i + 1}の本文`,
-  choices:
-    i % 2 === 0 ? ['選択肢A', '選択肢B', '選択肢C', '選択肢D'] : undefined,
-  answer: i % 2 === 0 ? 0 : true,
-  explanation: `ダミー問題${i + 1}の解説`,
-}));
+export const subjects: Subject[] = loadCSV<Subject>('../data/subjects.csv');
+
+export const units: Unit[] = loadCSV<Unit>('../data/units.csv');
+
+export const questions: Question[] = loadCSV<RawQuestion>(
+  '../data/questions.csv'
+).map((q) =>
+  q.type === 'mc'
+    ? { ...q, choices: q.choices?.split('|'), answer: Number(q.answer) }
+    : { ...q, choices: undefined, answer: q.answer === 'true' }
+);
