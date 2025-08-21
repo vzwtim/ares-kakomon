@@ -1,0 +1,50 @@
+[
+  {
+    "id": "q1",
+    "subjectId": "s1",
+    "unitId": "u1",
+    "type": "mc",
+    "prompt": "ダミー問題1の本文",
+    "choices": ["選択肢A", "選択肢B", "選択肢C", "選択肢D"],
+    "answer": 0,
+    "explanation": "ダミー問題1の解説"
+  },
+  {
+    "id": "q2",
+    "subjectId": "s1",
+    "unitId": "u1",
+    "type": "tf",
+    "prompt": "ダミー問題2の本文",
+    "answer": true,
+    "explanation": "ダミー問題2の解説"
+  },
+  {
+    "id": "q3",
+    "subjectId": "s1",
+    "unitId": "u2",
+    "type": "mc",
+    "prompt": "ダミー問題3の本文",
+    "choices": ["選択肢A", "選択肢B", "選択肢C", "選択肢D"],
+    "answer": 2,
+    "explanation": "ダミー問題3の解説"
+  },
+  {
+    "id": "q4",
+    "subjectId": "s1",
+    "unitId": "u2",
+    "type": "tf",
+    "prompt": "ダミー問題4の本文",
+    "answer": false,
+    "explanation": "ダミー問題4の解説"
+  },
+  {
+    "id": "q5",
+    "subjectId": "s1",
+    "unitId": "u3",
+    "type": "mc",
+    "prompt": "ダミー問題5の本文",
+    "choices": ["選択肢A", "選択肢B", "選択肢C", "選択肢D"],
+    "answer": 1,
+    "explanation": "ダミー問題5の解説"
+  }
+]

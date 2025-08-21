@@ -19,8 +19,7 @@
     "react-native": "0.79.5",
     "react-native-purchases": "^9.2.1",
     "expo-notifications": "~0.31.4",
-    "@ares-kakomon/core": "*",
-    "csv-parse": "^5.5.6"
+    "@ares-kakomon/core": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
