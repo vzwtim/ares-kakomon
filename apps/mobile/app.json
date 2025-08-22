@@ -19,6 +19,8 @@
       },
       "edgeToEdgeEnabled": true
     },
-    "web": {}
+    "web": {
+      "index": "web/index.html"
+    }
   }
 }

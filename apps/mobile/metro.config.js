@@ -15,5 +15,11 @@ config.resolver.nodeModulesPaths = [
 config.resolver.alias = {
   '@ares-kakomon/core': path.resolve(workspaceRoot, 'packages/core/src'),
 };
+config.resolver.resolverMainFields = ['browser', 'module', 'main'];
+
+config.resolver.extraNodeModules = {
+  'react': path.resolve(workspaceRoot, 'node_modules/react'),
+  'react-native': path.resolve(workspaceRoot, 'node_modules/react-native'),
+};
 
 module.exports = config;

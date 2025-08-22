@@ -4,4 +4,6 @@ export type RootStackParamList = {
   Quiz: { unitId: string; questionIds?: string[] };
   Result: { score: number; total: number };
   Review: undefined;
+  NotFound: undefined;
 };
+
